@@ -4,6 +4,7 @@ import 'tailwindcss/tailwind.css'
 import Header from '../components/Header'
 import CarContext from '../context/CartContext';
 import useCart from '../hooks/useCart';
+import '../style/base.css'
 
 const MyApp = ({ Component, pageProps }) => {
   const queryClient = new QueryClient();
@@ -12,8 +13,8 @@ const MyApp = ({ Component, pageProps }) => {
     <CarContext.Provider value={useCar}>
       <QueryClientProvider client={queryClient}>
         <Header />
-        <div className="mx-auto pt-5 bg-gray-50">
-          <div className="container mx-auto py-12 px-2 sm:px-2 lg:px-12">
+        <div className="mx-auto py-2">
+          <div className="container mx-auto px-2  pt-5 sm:px-2 lg:px-12">
             <Component {...pageProps} />
           </div>
         </div>

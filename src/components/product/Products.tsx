@@ -15,6 +15,7 @@ const Products = () => {
 
     return (
         <div className="grid gap-6 grid-cols-1 mx-4 sm:grid-cols-3 lg:grid-cols-5 lg:mx-auto">
+            <h1 className="col-span-full font-semibold text-3xl text-gray-400">Oferta de los productos mas buscados en tu zona</h1>
             {
                  status === QUERY_STATUS.LOADING && (
                      <ProductSkeleton />
