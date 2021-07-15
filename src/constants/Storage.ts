@@ -1,5 +1,5 @@
 const STORAGE = {
-    CART: 'cart'
+	CART: 'cart',
 }
 
 export default STORAGE;

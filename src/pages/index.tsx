@@ -2,10 +2,8 @@ import Products from "../components/product/Products"
 
 const Home = () => {
   return (
-    <div>
-     <Products />
-    </div>
-      )
+    <Products />
+  );
 }
 
-      export default Home;
+export default Home;
