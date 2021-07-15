@@ -35,8 +35,8 @@ const Cart = () => {
 		let value = parseInt(e.target.value);
 		if (!value  || value < 1) {
 			value = 1;
-			setValue(`product-${id}`, Math.trunc(value));
 		}
+		setValue(`product-${id}`, value);
 		changeProductQuantity(id, value);
 	}
 
