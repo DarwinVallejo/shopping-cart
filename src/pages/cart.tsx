@@ -35,7 +35,7 @@ const Cart = () => {
 		let value = parseInt(e.target.value);
 		if (!value  || value < 1) {
 			value = 1;
-			setValue(`product-${id}`, value);
+			setValue(`product-${id}`, Math.trunc(value));
 		}
 		changeProductQuantity(id, value);
 	}
@@ -107,7 +107,7 @@ const Cart = () => {
 											<span className="font-bold md:hidden">Cantidad: </span>
 											<div>
 												<button className="w-4" onClick={() => handleRemoveProductQuantity(product.id)}>-</button>
-												<input className="mx-1 border text-center w-8" type="number" min="1" defaultValue={product.quantity} {...register(`product-${product.id}`)} onBlur={(event) => handleChangeProduct(event, product.id)} />
+												<input className="mx-1 border text-center w-8" type="number" min="1" pattern="\d*" defaultValue={product.quantity} {...register(`product-${product.id}`)} onBlur={(event) => handleChangeProduct(event, product.id)} />
 												<button className="w-4" onClick={() => handleAddProduct(product)}>+</button>
 											</div>
 										</div>
