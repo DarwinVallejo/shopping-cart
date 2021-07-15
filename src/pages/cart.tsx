@@ -33,7 +33,7 @@ const Cart = () => {
 
 	const handleChangeProduct = (e: React.ChangeEvent<HTMLInputElement>, id: number) => {
 		let value = parseInt(e.target.value);
-		if (value === 0) {
+		if (!value  || value < 1) {
 			value = 1;
 			setValue(`product-${id}`, value);
 		}
@@ -117,7 +117,7 @@ const Cart = () => {
 										</div>
 										<div className="flex flex-col items-center md:items-start">
 											<span className="font-bold lg:hidden">Total: </span>
-											{(product.price * product.quantity).toFixed(3)}
+											{(product.price * product.quantity).toFixed(2)}
 										</div>
 									</div>
 
