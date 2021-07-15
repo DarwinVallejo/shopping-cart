@@ -1,8 +1,6 @@
-import product from "./Product";
-
-interface ProductCart {
-    product: product,
-    quantity: number,
+import Product from "./Product";
+interface ProductCart extends Product {
+	quantity: number;
 }
 
 export default ProductCart;
