@@ -106,9 +106,9 @@ const Cart = () => {
 										<div className="flex flex-col items-center md:items-start">
 											<span className="font-bold md:hidden">Cantidad: </span>
 											<div>
-												<button className="w-4" onClick={() => handleAddProduct(product)}>+</button>
-												<input className="mx-1 border text-center w-8" type="number" min="1" defaultValue={product.quantity} {...register(`product-${product.id}`)} onBlur={(event) => handleChangeProduct(event, product.id)} />
 												<button className="w-4" onClick={() => handleRemoveProductQuantity(product.id)}>-</button>
+												<input className="mx-1 border text-center w-8" type="number" min="1" defaultValue={product.quantity} {...register(`product-${product.id}`)} onBlur={(event) => handleChangeProduct(event, product.id)} />
+												<button className="w-4" onClick={() => handleAddProduct(product)}>+</button>
 											</div>
 										</div>
 										<div className="flex flex-col items-center md:items-start">
