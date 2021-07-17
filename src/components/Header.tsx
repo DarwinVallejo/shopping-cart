@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import { ShoppingCartIcon } from '@heroicons/react/outline';
 import CartContext from '../context/CartContext';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 const Header = () => {
 	const { cartState } = useContext(CartContext);
+	const [quantityState, setQuantityState] = useState(0);
+	useEffect(() => {
+		setQuantityState(cartState?.reduce((totalQuantity, {quantity}) => totalQuantity + quantity,0));
+	}, [cartState])
 	return (
 		<nav className="sticky top-0 z-50 bg-white px-12 shadow-md ">
 			<div className="relative flex items-center justify-between h-14">
@@ -16,7 +20,7 @@ const Header = () => {
 					</h1>
 				</div>
 				<div className="flex items-center">
-					<span className="rounded-full bg-green-600 text-white text-xs ml-1 px-1 self-start">{cartState?.length}</span>
+					<span className="rounded-full bg-green-600 text-white text-xs ml-1 px-1 self-start">{quantityState}</span>
 					<Link href="/cart">
 						<a className="flex justify-between">
 							<ShoppingCartIcon className="h-6 w-6 text-blue-600" />
